@@ -1,0 +1,19 @@
+① つぎの伝達関数をもつシステムのインディシャル応答 (ステップ入力に対する応答) を計算せよ．
+
+$$
+a)\,\frac{s^2-5 s-12}{(s+1)(s+2)(s+3)}\quad
+b)\,\frac{2 s^2+10 s-10}{(s+1)\left(s^2+2 s+10\right)}
+$$
+
+\begin{align*}
+    a)\,\mathcal{L}^{-1}[\frac{s^2-5s-12}{s(s+1)(s+2)(s+3)}]
+    &=\frac{3}{s+1}+\frac{1}{s+2}-\frac{2}{s+3}-\frac{2}{s} \\
+    &=3e^{-t}+e^{-2t}-2e^{-3t}-2 \\
+\end{align*}
+
+\begin{align*}
+    b)\,\mathcal{L}^{-1}[\frac{2s^2+10s-10}{s(s+1)(s^2+2s+10)}]
+    &=\frac{2-s}{s^2+2s+10}-\frac{1}{s}+\frac{2}{s+1} \\
+    &=-\frac{s+1}{(s+1)^2+3^2}+\frac{3}{(s+1)^2+3^2}-\frac{1}{s}+\frac{2}{s+1} \\
+    &=-e^{-t}\cos3t+3e^{-t}\sin3t-1+2e^{-t} \\
+\end{align*}

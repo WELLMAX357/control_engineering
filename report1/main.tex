@@ -1,0 +1,47 @@
+\documentclass[a4j,11pt]{ltjsarticle}    % 文章クラスとオプション設定
+%%%%%%%%%% スタイル %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{comment}    % 複数行コメント
+
+% 余白の調整
+\usepackage[top=30truemm,bottom=30truemm,left=20truemm,right=20truemm]{geometry}
+
+% 数式関連
+\usepackage{amsmath,amssymb,nccmath,siunitx}    % 数式
+\usepackage{bm}         % ベクトルの太文字
+\newcommand{\alignref}[1]{\textbf{式(\ref{#1})}}    % 数式参照
+\usepackage{siunitx}
+
+% 画像関連
+\usepackage{pdfpages} % PDF
+\usepackage{graphicx} % 画像
+
+\usepackage{here}% figureの位置調整
+% 表設定
+\usepackage{multirow}   % 表の行の結合
+\usepackage{longtable}  % ページをまたぐ長い表
+\usepackage{url}
+
+%%%%%%%%%% 本文 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\input{title.tex}
+
+% \setcounter{tocdepth}{3}
+% \tableofcontents
+% \newpage
+
+\input{section1.tex}
+\input{section2.tex}
+\input{section3.tex}
+\input{section4.tex}
+\input{section5.tex}
+\input{section6.tex}
+\input{section7.tex}
+
+%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \input{ref.tex}
+
+\end{document}
