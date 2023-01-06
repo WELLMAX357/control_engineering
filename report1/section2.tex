@@ -1,0 +1,32 @@
+② 伝達関数の分母多項式がつぎのように与えられるとき，システムが安定か否か判別せよ．
+$$
+a)\,s^3+5s^2+9s+5\quad
+b)\,2s^3+5s^2+6s+2
+$$
+表1，表2より，どちらも安定である．
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccc}
+        \hline
+        $s^3$ & 1 & 9 & 0 \\
+        $s^2$ & 5 & 5 & 0 \\
+        $s^1$ & $8=-\frac{1\times 5-5\times 9}{5}$ & 0 &  \\
+        $s^0$ & $5=-\frac{5\times 0-8\times 5}{8}$ & 0 &  \\ \hline
+        
+    \end{tabular}
+    \caption{a)のラウス表}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccc}
+        \hline
+        $s^3$ & 2 & 6 & 0 \\
+        $s^2$ & 5 & 2 & 0 \\
+        $s^1$ & $\frac{26}{5}=-\frac{2\times 2-5\times 6}{5}$ & 0 & 0 \\
+        $s^0$ & $5=-\frac{5\times 0-\frac{26}{5}\times 2}{\frac{26}{5}}$ & 0 & 0 \\ \hline
+        
+    \end{tabular}
+    \caption{b)のラウス表}
+\end{table}
