@@ -1,0 +1,91 @@
+⑤つぎのシステムについて，問いに答えよ．
+$$
+\frac{\mathrm{d}}{\mathrm{d} t} \boldsymbol{x}(t)=\boldsymbol{A} \boldsymbol{x}(t)+\boldsymbol{b} u(t), \quad \boldsymbol{A}=\left[\begin{array}{cc}
+0 & 1 \\
+-3 & -4
+\end{array}\right], \quad \boldsymbol{b}=\left[\begin{array}{l}
+1 \\
+1
+\end{array}\right]
+$$
+
+a)\,逆ラプラス変換を利用して$e^{At}$を求めよ．
+
+
+b)\,$\boldsymbol{x}(0)=\left[\begin{array}{ll}-1 & 1\end{array}\right]^T, u(t) \equiv 1$
+としたときのシステムの解軌道$x(t)$を求めよ．
+
+
+$$
+\begin{aligned}
+    a)\,
+    \mathrm{e}^{A t} & =\mathcal{L}^{-1}\left\{(s I-A)^{-1}\right\}=\mathcal{L}^{-1}\left\{\left[\begin{array}{cc}
+    s & -1 \\
+    3 & s+4
+    \end{array}\right]^{-1}\right\}=\mathcal{L}^{-1}\left\{\frac{1}{s^2+4 s+3}\left[\begin{array}{cc}
+    s+4 & 1 \\
+    -3 & s
+    \end{array}\right]\right\} \\
+    & =\mathcal{L}^{-1}\left\{\left[\begin{array}{cc}
+    \frac{3}{2} \frac{1}{s+1}-\frac{1}{2} \frac{1}{s+3} & \frac{1}{2} \frac{1}{s+1}-\frac{1}{2} \frac{1}{s+3} \\
+    -\frac{3}{2} \frac{1}{s+1}+\frac{3}{2} \frac{1}{s+3} & -\frac{1}{2} \frac{1}{s+1}+\frac{3}{2} \frac{1}{s+3}
+    \end{array}\right]\right\}=\left[\begin{array}{cc}
+    \frac{3}{2} \mathrm{e}^{-t}-\frac{1}{2} \mathrm{e}^{-3 t} & \frac{1}{2} \mathrm{e}^{-t}-\frac{1}{2} \mathrm{e}^{-3 t} \\
+    -\frac{3}{2} \mathrm{e}^{-t}+\frac{3}{2} \mathrm{e}^{-3 t} & -\frac{1}{2} \mathrm{e}^{-t}+\frac{3}{2} \mathrm{e}^{-3 t}
+    \end{array}\right]
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+    b)\,
+    & \int_0^t \mathrm{e}^{A(t-\tau)} b u(\tau) d \tau=\int_0^t\left[\begin{array}{ll}
+    \frac{3}{2} \mathrm{e}^{\tau-t}-\frac{1}{2} \mathrm{e}^{3(\tau-t)} & \frac{1}{2} \mathrm{e}^{\tau-t}-\frac{1}{2} \mathrm{e}^{3(\tau-t)} \\
+    -\frac{3}{2} \mathrm{e}^{\tau-t}+\frac{3}{2} \mathrm{e}^{3(\tau-t)} & -\frac{1}{2} \mathrm{e}^{\tau-t}+\frac{3}{2} \mathrm{e}^{3(\tau-t)}
+    \end{array}\right]\left[\begin{array}{l}
+    1 \\
+    1
+    \end{array}\right] d \tau \\
+    & =\int_0^t\left[\begin{array}{c}
+    2 \mathrm{e}^{-t} \mathrm{e}^\tau-\mathrm{e}^{-3 t} \mathrm{e}^{3 \tau} \\
+    -2 \mathrm{e}^{-t} \mathrm{e}^\tau+3 \mathrm{e}^{-3 t} \mathrm{e}^{3 \tau}
+    \end{array}\right] d \tau=\left[\left[\begin{array}{c}
+    2 \mathrm{e}^{-t} \mathrm{e}^\tau-\mathrm{e}^{-3 t} \frac{1}{3} \mathrm{e}^{3 \tau} \\
+    -2 \mathrm{e}^{-t} \mathrm{e}^\tau+\mathrm{e}^{-3 t} \mathrm{e}^{3 \tau}
+    \end{array}\right]\right]_0^t \\
+    & =\left[\begin{array}{c}
+    2-\frac{1}{3}-\left(2 \mathrm{e}^{-t}-\frac{1}{3} \mathrm{e}^{-3 t}\right) \\
+    -2+1-\left(-2 \mathrm{e}^{-t}+\mathrm{e}^{-3 t}\right)
+    \end{array}\right]=\left[\begin{array}{c}
+    \frac{5}{3}-2 \mathrm{e}^{-t}+\frac{1}{3} \mathrm{e}^{-3 t} \\
+    -1+2 \mathrm{e}^{-t}-\mathrm{e}^{-3 t}
+    \end{array}\right]
+    \end{aligned}
+$$
+$$
+\begin{aligned}
+x(t) & =\mathrm{e}^{A t} x(0)+\int_0^t \mathrm{e}^{A(t-\tau)} b u(\tau) d \tau=\left[\begin{array}{cc}
+\frac{3}{2} \mathrm{e}^{-t}-\frac{1}{2} \mathrm{e}^{-3 t} & \frac{1}{2} \mathrm{e}^{-t}-\frac{1}{2} \mathrm{e}^{-3 t} \\
+-\frac{3}{2} \mathrm{e}^{-t}+\frac{3}{2} \mathrm{e}^{-3 t} & -\frac{1}{2} \mathrm{e}^{-t}+\frac{3}{2} \mathrm{e}^{-3 t}
+\end{array}\right]\left[\begin{array}{l}
+1 \\
+1
+\end{array}\right]+\left[\begin{array}{c}
+\frac{5}{3}-2 \mathrm{e}^{-t}+\frac{1}{3} \mathrm{e}^{-3 t} \\
+-1+2 \mathrm{e}^{-t}-\mathrm{e}^{-3 t}
+\end{array}\right] \\
+& =\left[\begin{array}{c}
+2 \mathrm{e}^{-t}-\mathrm{e}^{-3 t} \\
+-2 \mathrm{e}^{-t}+3 \mathrm{e}^{-3 t}
+\end{array}\right]+\left[\begin{array}{l}
+\frac{5}{3}-2 \mathrm{e}^{-t}+\frac{1}{3} \mathrm{e}^{-3 t} \\
+-1+2 \mathrm{e}^{-t}-\mathrm{e}^{-3 t}
+\end{array}\right]=\left[\begin{array}{c}
+\frac{5}{3}-\frac{2}{3} \mathrm{e}^{-3 t} \\
+-1+2 \mathrm{e}^{-3 t}
+\end{array}\right]
+\end{aligned}
+$$
+
+\newpage
